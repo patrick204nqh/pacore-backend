@@ -13,12 +13,15 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "sidekiq", "~> 4.1", ">= 4.1.2"
+gem 'rails_admin', '~> 3.0'
+gem 'devise'
+gem 'cancancan'
 # gem "redis", "~> 4.0"
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
-# gem "sassc-rails"
+gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 gem "graphql"
 
