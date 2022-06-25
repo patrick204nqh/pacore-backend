@@ -1,0 +1,79 @@
+version: "3.9"
+
+
+x-default: &default
+  env_file: .env
+  networks:
+    - backend_net
+
+x-rails: &rails
+  image: patrick204nqh/pacore-backend:latest
+  volumes:
+    - $PWD:$RAILS_PATH
+    - gems:/gems
+
+
+services:
+  rails:
+    <<: *default
+    <<: *rails
+    container_name: pacore-rails
+    # command: tail -f /dev/null
+    command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-P", "/dev/null"]
+    ports:
+      - $RAILS_PORT:3000
+    depends_on:
+      - postgres
+      - redis
+
+  sidekiq:
+    <<: *default
+    <<: *rails
+    container_name: pacore-sidekiq
+    command: bundle exec sidekiq
+    depends_on:
+      - rails
+
+  postgres:
+    <<: *default
+    image: postgres:14
+    container_name: pacore-postgres
+    environment:
+      POSTGRES_DB: $DATABASE_NAME
+      POSTGRES_USER: $DATABASE_USER
+      POSTGRES_PASSWORD: $DATABASE_PASSWORD
+    ports:
+      - $DATABASE_PORT:5432
+    volumes:
+      - $PWD/docker/postgres/init-scripts/:/docker-entrypoint-initdb.d/
+      - pacore-db:/var/lib/postgresql/data
+
+  redis:
+    <<: *default
+    image: redis:4.0
+    container_name: pacore-redis
+    ports:
+      - $REDIS_PORT:6379
+
+  redis-gui:
+    image: marian/rebrow:latest
+    container_name: pacore-redis-gui
+    ports:
+      - 5001:5001
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: pacore-mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025
+
+
+volumes:
+  pacore-db:
+  gems:
+
+
+networks:
+  backend_net:
+    driver: bridge
