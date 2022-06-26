@@ -19,7 +19,6 @@ gem 'cancancan'
 gem 'rolify'
 gem 'paper_trail'
 gem 'rails_admin', '~> 3.0'
-gem 'rails_admin_rollincode', '1.4'
 # gem "redis", "~> 4.0"
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
@@ -47,5 +46,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem 'rails_admin_pacore', path: 'rails_admin_pacore'
