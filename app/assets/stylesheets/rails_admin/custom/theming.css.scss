@@ -50,6 +50,10 @@ body.rails_admin .sidebar-nav > .nav-stacked > li > a {
   padding: 10px 15px;
 }
 
+body.rails_admin .table td.links .list-inline li .nav-link {
+  padding: 0 0.4rem;
+}
+
 .links {
   ul li {
     a {
@@ -197,7 +201,6 @@ a {
   &:hover {
     color: $secondary;
   }
-  color: #fff;
 }
 
 .navbar-header {
@@ -206,7 +209,7 @@ a {
 
 a.navbar-brand {
   line-height: 25px;
-  padding-top: 12px;
+  padding: 10px;
   white-space: nowrap;
   color: #fff !important;
   cursor: pointer !important;
