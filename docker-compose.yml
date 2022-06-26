@@ -62,6 +62,7 @@ services:
       - 5001:5001
 
   mailhog:
+    <<: *default
     image: mailhog/mailhog
     container_name: pacore-mailhog
     ports:
