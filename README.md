@@ -1,7 +1,13 @@
 # PACORE
 
-#### Development setup
+#### System dependencies
+- Ruby 3.1.2
+- Rails 7.0.3
+- PostgreSQL 14
+- NodeJS 16.15.1
+- Yarn
 
+#### Development setup
 ```
 cp .env.example .env
 
