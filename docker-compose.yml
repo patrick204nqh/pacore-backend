@@ -19,7 +19,9 @@ services:
     <<: *rails
     container_name: pacore-rails
     # command: tail -f /dev/null
-    command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-P", "/dev/null"]
+    # command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-P", "/dev/null"]
+    command: ./bin/dev
+    tty: true
     ports:
       - $RAILS_PORT:3000
     depends_on:

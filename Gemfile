@@ -25,6 +25,7 @@ gem 'rails_admin', '~> 3.0'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "sassc-rails"
+gem "jsbundling-rails"
 # gem "image_processing", "~> 1.2"
 gem "graphql"
 
@@ -39,6 +40,7 @@ group :development do
   gem "spring"
   gem "pry"
   gem "pry-byebug"
+  gem "foreman"
 end
 
 group :test do
