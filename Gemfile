@@ -11,23 +11,21 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
+gem "react-rails"
 gem "jbuilder"
 gem "sidekiq", "~> 4.1", ">= 4.1.2"
-gem 'devise'
-gem 'omniauth'
-gem 'cancancan'
-gem 'rolify'
-gem 'paper_trail'
-gem 'rails_admin', '~> 3.0'
-# gem "redis", "~> 4.0"
-# gem "kredis"
-# gem "bcrypt", "~> 3.1.7"
+gem "devise"
+gem "omniauth"
+gem "cancancan"
+gem "rolify"
+gem "paper_trail"
+gem "rails_admin", "~> 3.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "sassc-rails"
 gem "jsbundling-rails"
-# gem "image_processing", "~> 1.2"
 gem "graphql"
+# gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
