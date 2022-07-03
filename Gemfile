@@ -25,6 +25,8 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 gem "jsbundling-rails"
 gem "graphql"
+# gem "elasticsearch"
+# gem "searchkick"
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do

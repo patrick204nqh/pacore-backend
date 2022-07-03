@@ -11,6 +11,7 @@
 ```
 cp .env.example .env
 
+# docker
 docker build --no-cache -t patrick204nqh/pacore-backend --build-arg RAILS_PATH=/var/www/backend .
 docker-compose up -d
 ```
